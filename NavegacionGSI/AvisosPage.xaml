@@ -1,0 +1,59 @@
+﻿<Page x:Class="NavegacionGSI.AvisosPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NavegacionGSI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="White"
+      Title="AvisosPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Imágenes con ToggleButtons -->
+        <Border Margin="10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="3">
+            <Image Source="Assets/alertaAtasco.jpg"/>
+        </Border>
+        <RadioButton GroupName="groupAlertas" Content="Atasco" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+        <Border Margin="10" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="3">
+            <Image Source="Assets/alertaAccidente.jpg"/>
+        </Border>
+        <RadioButton GroupName="groupAlertas" Content="Accidente" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
+        <Border Margin="10" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" BorderBrush="Black" BorderThickness="3">
+            <Image Source="Assets/alertaObras.jpg"/>
+        </Border>
+        <RadioButton GroupName="groupAlertas" Content="Obras" Grid.Row="4" Grid.Column="1"/>
+        <Border Margin="10" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="3">
+            <Image Source="Assets/alertaCalleCortada.jpg"/>
+        </Border>
+        <RadioButton GroupName="groupAlertas" Content="Calle Cortada" Grid.Row="4" Grid.Column="2"/>
+
+        <!-- TextBoxes con etiquetas -->
+        <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" VerticalAlignment="Bottom">
+            <Label Content="Ubicación:" FontSize="18"/>
+            <TextBox x:Name="txtUbicacion"/>
+            <Label Content="Hora:" FontSize="18"/>
+            <TextBox x:Name="txtHora"/>
+            <Label Content="Descripcion:" FontSize="18"/>
+            <TextBox x:Name="txtDescripcion" Height="80"/>
+        </StackPanel>
+
+        <!-- Botón de enviar alerta -->
+        <Button Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="60" Content="Enviar"/>
+    </Grid>
+</Page>
